@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping List</title>
+</head>
+<body>
+
+	<h1>Shopping List</h1>
+
+	<p>Get it done today</p>
+	<input type="text" id="userinput" placeholder="enter items..">
+	<button id="btn">Enter</button>
+
+	<ul>
+	</ul>
+
+
+
+<script type="text/javascript" src="C:\Users\sara\Desktop\Front endd\Shopping List\script.js"></script>
+</body>
+</html>
