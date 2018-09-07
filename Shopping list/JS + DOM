@@ -1,0 +1,50 @@
+var input = document.getElementById('userinput');
+var btn = document.getElementById('btn');
+var ul = document.querySelector('ul');
+
+btn.addEventListener("click", addItemAfterClick);
+input.addEventListener("keypress", addItemAfterKeyPress);
+
+function inputlength(){
+	return input.value.length;
+}
+
+function addItemAfterClick(){
+	if(inputlength()>0)
+		createListItem();
+
+
+}
+
+function addItemAfterKeyPress(event){
+
+	if(inputlength()>0 && event.keyCode === 13)
+ 	createListItem();
+}
+
+function createListItem(){
+
+	var li = document.createElement('li');
+	var item = document.createTextNode(input.value);
+	li.appendChild(item);
+	ul.appendChild(li);
+	input.value ="";
+	li.onclick = underline;
+
+	var button =document.createElement("button"); 
+// APPEND TEXT TO BUTTON
+	button.appendChild(document.createTextNode("Delete!"));
+// APPEND BUTTON TO LIST
+	li.appendChild(button);
+
+	button.onclick=removeParent;
+}
+
+function removeParent(evt){
+	evt.target.parentNode.remove();
+} 
+
+function underline(event){
+ 	var target = event.target;
+ 	target.classList.toggle("done");
+ }
